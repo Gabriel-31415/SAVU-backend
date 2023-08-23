@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-mongoose.connect('mongodb+srv://gabrieluagufrpe:<senha>@cluster0.zwdotjn.mongodb.net/<database>');
+mongoose.connect('String do atlas');
 
 let db = mongoose.connection;
 

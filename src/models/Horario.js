@@ -4,7 +4,7 @@ const horarioSchema = new mongoose.Schema(
 	{
 		id: { type: String },
 		horario: { type: Date, default: Date.now },
-		dia_id: { type: mongoose.Schema.Types.ObjectId, ref: 'dias', required: true },
+		dia: { type: mongoose.Schema.Types.ObjectId, ref: 'dias', required: true },
 	}
 )
 

@@ -4,7 +4,7 @@ class HorarioController {
 
 	static listarHorarios = async ( req, res ) => {
 		try {
-			const HorariosResultado = await horarios.find();
+			const HorariosResultado = await horarios.find().populate('dias').exec();
 			res.status(200).json(HorariosResultado)
 		} catch (err) {
 			res.status(500).json(err.message);

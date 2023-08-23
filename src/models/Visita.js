@@ -8,8 +8,11 @@ const visitaSchema = new mongoose.Schema(
 		telefone: { type: String, required: true },
 		email: { type: String, required: true },
 		descricao: { type: String, required: true },
-		agendamento_id: { type: mongoose.Schema.Types.ObjectId, ref: 'agendamentos', required: true },
-		tipo_visita_id: { type: mongoose.Schema.Types.ObjectId, ref: 'tipoVisitas', required: true },
+		status: {
+			type: String,
+			enum : ['processando','confirmada', 'concluida'],
+			default: 'processando' },
+		tipoVisita: { type: mongoose.Schema.Types.ObjectId, ref: 'tipoVisitas', required: true },
 	}
 )
 

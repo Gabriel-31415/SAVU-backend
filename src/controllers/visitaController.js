@@ -4,7 +4,7 @@ class VisitaController {
 
 	static listarVisitas = async ( req, res ) => {
 		try {
-			const VisitasResultado = await visitas.find();
+			const VisitasResultado = await visitas.find().populate( 'tipoVisita' ).exec();
 			res.status(200).json(VisitasResultado)
 		} catch (err) {
 			res.status(500).json(err.message);
